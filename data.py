@@ -5,3 +5,5 @@ class Url:
     COURIER_LOGIN_URL = BASE_URL + '/api/v1/courier/login'
     COURIER_DELETE_URL = BASE_URL + '/api/v1/courier'
 
+login_valid = 'valkiriya'
+password_valid = '3333333!'
