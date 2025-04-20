@@ -33,3 +33,19 @@ class TestCreateLogin:
         response = requests.post(Url.COURIER_LOGIN_URL, json=payload, headers=headers)
         assert (response.status_code == 404 and
                 response.json() == {'code': 404, 'message': 'Учетная запись не найдена'})
+
+
+    @allure.title('Проверка неудачного логина курьера при отсутсвии заполненного login/password')
+    @allure.description('Проверка получения кода 400 Bad request и сообщения '
+                        '{"message": "Недостаточно данных для входа"} при отправке POST-запроса '
+                        'на авторизацию курьера при незаполненных полях login/password')
+    @pytest.mark.parametrize('login, password', [
+        ('', generate_random_string(10)),
+        (generate_random_string(10), '')
+    ])
+    def test_login_courier_without_required_fields_failed(self, login, password):
+        payload = {'login': login, 'password': password}
+        headers = {'Content-Type': 'application/json'}
+        response = requests.post(Url.COURIER_LOGIN_URL, json=payload, headers=headers)
+        assert (response.status_code == 400 and
+                response.json() == {'code': 400, "message":  "Недостаточно данных для входа"})
