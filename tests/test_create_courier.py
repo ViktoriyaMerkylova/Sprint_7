@@ -15,7 +15,8 @@ class TestCreateCourier:
                    'firstName': generate_random_string(10)}
         headers = {'Content-Type': 'application/json'}
         response = requests.post(Url.COURIER_CREATE_URL, json=payload, headers=headers)
-        assert response.status_code == 201 and response.json() == {"ok": True}
+        assert response.status_code == 201
+        assert response.json() == {'ok':True}
         courier_id = login_and_get_courier_id(payload)
         delete_courier(courier_id)
 
@@ -24,7 +25,7 @@ class TestCreateCourier:
     @allure.description('Проверка получения кода 409 Conflict и сообщения '
                         '{"message": "Этот логин уже используется. Попробуйте другой."} при отправке POST-запроса на создание курьера '
                         'при использовании существующего логина')
-    def test_create_courier_сonflict(self):
+    def test_create_courier_сonflicts(self):
         payload = {'login': login_valid, 'password': generate_random_string(10)}
         headers = {'Content-Type': 'application/json'}
         requests.post(Url.COURIER_CREATE_URL, json=payload, headers=headers)
@@ -40,7 +41,8 @@ class TestCreateCourier:
         payload = {'login': generate_random_string(10), 'password': generate_random_string(10)}
         headers = {'Content-Type': 'application/json'}
         response = requests.post(Url.COURIER_CREATE_URL, json=payload, headers=headers)
-        assert response.status_code == 201 and response.json() == {"ok": True}
+        assert response.status_code == 201
+        assert response.json() == {"ok": True}
         courier_id = login_and_get_courier_id(payload)
         delete_courier(courier_id)
 
