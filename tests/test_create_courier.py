@@ -7,7 +7,7 @@ from data import Url, login_valid
 
 
 class TestCreateCourier:
-    @allure.title('Проверка успешного: создания курьера, возвращение правильного кода ответа и {"ok":true}')
+    @allure.title('Проверка успешного: создания курьера, возвращение правильного кода ответа и {"ok": True}')
     @allure.description('Проверка получения кода 201 Created, создание курьера и сообщения {"ok": True} при отправке POST-запроса '
                         'на создание курьера при заполненных полях login, password и firstName валидными данными')
     def test_create_courier(self):
@@ -16,7 +16,7 @@ class TestCreateCourier:
         headers = {'Content-Type': 'application/json'}
         response = requests.post(Url.COURIER_CREATE_URL, json=payload, headers=headers)
         assert response.status_code == 201
-        assert response.json() == {'ok':True}
+        assert response.json() == {'ok': True}
         courier_id = login_and_get_courier_id(payload)
         delete_courier(courier_id)
 

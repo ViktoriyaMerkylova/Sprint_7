@@ -9,13 +9,13 @@ login_valid = 'valkiriya'
 password_valid = '3333333!'
 
 order_black = {
-    "firstName": "John",
-    "lastName": "Snow",
-    "address": "the Wall",
+    "firstName": "Vika",
+    "lastName": "Merkulova",
+    "address": "United States of America",
     "metroStation": 4,
-    "phone": "+7 800 355 35 35",
+    "phone": "+7 999 720 50 46",
     "rentTime": 5,
-    "deliveryDate": "2024-08-06",
+    "deliveryDate": "2025-04-04",
     "comment": "I don't know nothing",
     "color": [
         "BLACK"
@@ -23,41 +23,41 @@ order_black = {
 }
 
 order_grey = {
-    "firstName": "Daenerys",
-    "lastName": "Targaryen",
-    "address": "Antient Valyria",
+    "firstName": "Clarence",
+    "lastName": "Endicott",
+    "address": "Kaitlin Bentley",
     "metroStation": 4,
-    "phone": "+7 800 355 35 00",
+    "phone": "+7 998 721 51 47",
     "rentTime": 5,
-    "deliveryDate": "2024-08-06",
-    "comment": "Drakaris",
+    "deliveryDate": "2025-03-03",
+    "comment": "Stacey",
     "color": [
         "GREY"
     ]
 }
 
 order_black_grey = {
-    "firstName": "Tyrion",
-    "lastName": "Lannister",
-    "address": "Caterly Rock",
+    "firstName": "Faithe",
+    "lastName": "Easton",
+    "address": "Cassy Traylor",
     "metroStation": 3,
-    "phone": "+7 800 355 0988",
+    "phone": "+7 997 355 52 48",
     "rentTime": 1,
-    "deliveryDate": "2024-08-06",
-    "comment": "I talk too much",
+    "deliveryDate": "205-03-01",
+    "comment": "Addilyn Appleton",
     "color": [
         "GREY", "BLACK"
     ]
 }
 
 order_no_color = {
-    "firstName": "Sansa",
-    "lastName": "Stark",
-    "address": "Winterfell",
+    "firstName": "Hardy",
+    "lastName": "Davids",
+    "address": "Finley Bentley",
     "metroStation": 3,
-    "phone": "+7 800 445 0988",
+    "phone": "+7 888 545 12 34",
     "rentTime": 4,
-    "deliveryDate": "2024-08-06",
-    "comment": "I like dogs",
+    "deliveryDate": "2025-01-01",
+    "comment": "Mo Silver",
     "color": []
 }
