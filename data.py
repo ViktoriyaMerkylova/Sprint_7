@@ -1,3 +1,6 @@
+import generators
+
+
 class Url:
     BASE_URL = 'https://qa-scooter.praktikum-services.ru'
     COURIER_CREATE_URL = BASE_URL + '/api/v1/courier'
@@ -61,3 +64,14 @@ order_no_color = {
     "comment": "Mo Silver",
     "color": []
 }
+
+class Registration:
+    reg_data = [{'password': generators.password_generator(), 'first_name': generators.name_generator()},
+                {'login': generators.login_generator(), 'first_name': generators.name_generator()}]
+
+class ResponseBody:
+    COURIER_CREATION_SUCCESS = {'ok': True}
+    COURIER_NAME_ALREADY_EXIST = {'code': 409, 'message': 'Этот логин уже используется. Попробуйте другой.'}  #
+    COURIER_REGISTRATION_NOT_ENOUGH_DATA = {'code': 400, 'message': 'Недостаточно данных для создания учетной записи'}
+    COURIER_ACCOUNT_NOT_FOUND = {'code': 404, 'message': 'Учетная запись не найдена'}
+    COURIER_LOGIN_NOT_ENOUGH_DATA = {'code': 400, 'message': 'Недостаточно данных для входа'}
