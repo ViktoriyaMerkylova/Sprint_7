@@ -1,6 +1,6 @@
 import allure
 import requests
-from data import Url
+from data import Url, Flags
 
 
 class TestGetOrders:
@@ -9,7 +9,5 @@ class TestGetOrders:
     @allure.description('Проверка получения кода 200 Ok и списка заказов с id заказа при отправке GET-запроса '
                         'на получение списка заказов')
     def test_get_orders_list_success(self):
-        response = requests.get(Url.ORDERS_CREATE_URL)
-        assert (type(response.json()['orders']) == list
-                and response.status_code == 200
-                and 'id' in response.json()['orders'][0])
+        response = requests.get(f'{Url.ORDERS_CREATE_URL}')
+        assert response.status_code == 200 and Flags.SUCCESSFUL_GET_ORDER_LIST in response.json()

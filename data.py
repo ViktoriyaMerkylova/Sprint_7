@@ -6,7 +6,7 @@ class Url:
     COURIER_CREATE_URL = BASE_URL + '/api/v1/courier'
     ORDERS_CREATE_URL = BASE_URL + '/api/v1/orders'
     COURIER_LOGIN_URL = BASE_URL + '/api/v1/courier/login'
-    COURIER_DELETE_URL = BASE_URL + '/api/v1/courier'
+    COURIER_DELETE_URL = BASE_URL + '/api/v1/courier/'
 
 login_valid = 'valkiriya'
 password_valid = '3333333!'
@@ -75,3 +75,6 @@ class ResponseBody:
     COURIER_REGISTRATION_NOT_ENOUGH_DATA = {'code': 400, 'message': 'Недостаточно данных для создания учетной записи'}
     COURIER_ACCOUNT_NOT_FOUND = {'code': 404, 'message': 'Учетная запись не найдена'}
     COURIER_LOGIN_NOT_ENOUGH_DATA = {'code': 400, 'message': 'Недостаточно данных для входа'}
+
+class Flags:
+    SUCCESSFUL_GET_ORDER_LIST = 'orders'
